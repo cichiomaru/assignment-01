@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CustomEvents;
+using CustomInput;
 
 namespace Behaviours {
-    public class Interact : MonoBehaviour {
+    public class Interact : MonoBehaviour, IInputReciever {
         /// <summary>
         /// reference untuk komponent interactible
         /// </summary>
@@ -45,6 +46,14 @@ namespace Behaviours {
         /// <returns></returns>
         private Interactible GetInteractible(Collider2D collision) {
             return collision.gameObject.GetComponent<Interactible>();
+        }
+
+        public void AxisChanged(float value) {
+
+        }
+
+        public void ButtonPressed(string buttonName) {
+
         }
     }
 }

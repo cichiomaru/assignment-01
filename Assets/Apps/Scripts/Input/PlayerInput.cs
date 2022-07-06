@@ -5,6 +5,11 @@ using UnityEngine;
 using Behaviours;
 
 namespace CustomInput {
+
+    interface IInputReciever {
+        void AxisChanged(float value);
+        void ButtonPressed(string buttonName);
+    }
     public class PlayerInput : MonoBehaviour {
         /// <summary>
         /// reference untuk class movement
@@ -14,6 +19,7 @@ namespace CustomInput {
         /// reference untuk class interact
         /// </summary>
         private Interact interact;
+
 
         private void Awake() {
             movement = GetComponent<Movement>();

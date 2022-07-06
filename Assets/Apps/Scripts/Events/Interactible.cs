@@ -25,10 +25,12 @@ namespace CustomEvents {
         /// </summary>
         //[SerializeField] private UnityEvent onInteract;
         [SerializeField] private UnityEvent<Transform> onInteractWithTransform;
+        public event Action interact; 
 
         private void Update() {
             if (isInteractible) {
                 interactUI.ShowEnabled();
+                
             }
             else {
                 interactUI.ShowDisabled();
